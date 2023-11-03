@@ -1,16 +1,12 @@
-export default function TextContent() {
+type description = {
+  data: { name: string; date: string; title: string; mainText: string };
+};
+
+export default function TextContent(parameter: description) {
   return (
     <div>
-      <h3>
-        If we quantify the alarm, we can get to the <br></br> FTP pixel through
-        the online SSL interface!{" "}
-      </h3>
-      <p className="text-content">
-        Omnis perspiciatis qui quia commodi sequi modi. Nostrum quam aut
-        cupiditate est facere omnis possimus. Tenetur similique nemo illo soluta
-        molestias facere quo. Ipsam totam facilis delectus nihil quidem soluta
-        vel est omnis.
-      </p>
+      <h3>{parameter.data.title}</h3>
+      <p className="text-content">{parameter.data.mainText}</p>
       <p className="readMore">Read more...</p>
     </div>
   );

@@ -4,6 +4,7 @@ import SearchBar from "./Components/SearchBar.tsx";
 import UserDetails from "./Components/UserDetails.tsx";
 import TextContent from "./Components/TextContent.tsx";
 import GithubIcon from "./Components/GithubIcon.tsx";
+import { details } from "./Card.ts";
 
 function App() {
   return (
@@ -11,23 +12,19 @@ function App() {
       <NavBar />
 
       <main>
-        <h1>Blog Delux</h1>
+        <h1>Kitty Central</h1>
         <SearchBar />
       </main>
 
-      <section>
-        <UserDetails />
-        <TextContent />
-      </section>
-      <section>
-        <UserDetails />
-        <TextContent />
-      </section>
+      {details.map((parameter) => {
+        return (
+          <section>
+            <UserDetails data={parameter} />
+            <TextContent data={parameter} />
+          </section>
+        );
+      })}
 
-      <section>
-        <UserDetails />
-        <TextContent />
-      </section>
       <footer>
         <p>Modul D</p>
         <GithubIcon />
